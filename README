@@ -13,3 +13,45 @@ the deck without using Lernkarten's deck editing tool.
 is subjectively better than other digital flashcard programs.
 
 3. Other improvements which I haven't yet thought of :P
+
+
+
+The algorithm:
+==============
+
+When presented with a card, Lernkarten will give you three options:
+
+a) Hard
+b) Continue
+c) Easy
+
+(Names may change over time)
+
+By default, the Lernkarten algorithm will follow path (b). This path
+will focus on presenting the user with a small set of cards at a
+time. When starting a new deck, the user will be presented with the
+first 5 cards in that deck. By default, these cards will cycle x times
+(where x is a number between 3-7 [tbd], most likely 5). Once the
+cycles have been completed, the next five cards will be
+introduced. The same cycles will apply to this new set of cards, but
+at the end of each cycle, a card from the previous cycle will be
+presented. After the cards from the previous set have appeared at the
+end of the current set y times, they will appear at the end of each
+25th set instead of each 5th. This procedure will then repeat with
+each new set of 5 cards. For example, the appearance progression of a
+given card  might go as follows:
+
+(numbers represent how many cards it will take for the given card to
+reappear. Each state will be visited 5 times before moving on)
+
+5 -> 25 -> 125 -> 625
+
+Remember, this is what happens if a person selects (b) every time. If
+the user selects (a), the card is moved to the current or next set of
+5 active cards (that is to say that it moves back to the beginning of
+the progression marked above). If a card is marked (c), the card will
+automatically move down the progression by one step.
+
+At the moment, I have no plans to allow cards to extend beyond 625, so
+decks of larger than 625 may get a bit crowded.
+
