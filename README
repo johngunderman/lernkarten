@@ -1,0 +1,15 @@
+Lernkarten
+----------
+A "better" flashcard program
+============================
+
+Lernkarten attempts to solve many of the problems with current digital
+flashcard solutions. 
+
+1. Lernkarten stores decks in plaintext so that one can easily modify
+the deck without using Lernkarten's deck editing tool. 
+
+2. Lernkarten's sorting algorithm for deciding when to present cards
+is subjectively better than other digital flashcard programs.
+
+3. Other improvements which I haven't yet thought of :P
